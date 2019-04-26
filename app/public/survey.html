@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+    img {
+      height:150px;
+      width: 150px; 
+    }
+
+    </style>
+   
+    <title>Survey</title>
+</head>
+<body>
+    
+
+    <div class="container">
+
+        <h2>Survey Questions</h2>
+        <hr>
+    
+        <h3><strong>About You</strong></h3>
+        <h4>Name (Required)</h4>
+        <input type="text" id="name" class="form-control" required>
+    
+        <h4>Link to Photo Image (Required)</h4>
+        <input type="text" id="photo" class="form-control" required>
+    
+        <hr>
+    
+       
+        <h4>1.)You like to plan things out rather than be spotanoeous.</h4>
+        <select class="chosen-select" id="q1">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+    
+       
+        <h4>2.)You don't think aboout tommorow, rather you prefer to have fun in the current moment. </h4>
+        <select class="chosen-select" id="q2">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+       
+      
+        <h4>3.)You like driving slow.  </h4>
+        <select class="chosen-select" id="q3">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+          
+        <h4>4.)You prefer eating out rather than staying in.  </h4>
+        <select class="chosen-select" id="q4">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+    
+          
+        <h4>5.)You like Chinese Food. </h4>
+        <select class="chosen-select" id="q5">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+          
+        <h4>6.)You like rainy days. </h4>
+        <select class="chosen-select" id="q6">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+  
+        <h4>7.)Breakfest is your favorite meal of the day. </h4>
+        <select class="chosen-select" id="q7">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+  
+        <h4>8.)You like to tail-gate people when driving. </h4>
+        <select class="chosen-select" id="q8">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+  
+        <h4>9.)You like chocolate. </h4>
+        <select class="chosen-select" id="q9">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+          
+        <h4>10.)Game of Thrones is best show you've seen.  </h4>
+        <select class="chosen-select" id="q10">
+          <option value=""></option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <br>
+        <br>
+    
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+         Submit</button>
+    
+        <hr>
+        <footer class="footer">
+          <div class="container">
+            <p><a href="api/friends">API Friends List</a> | <a href=#>GitHub Repo</a></p>
+          </div>
+        </footer>
+    
+      </div>
+    
+    <!-- Modal -->
+  <div id="results-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+  
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title"><strong id='cookie'>Best Match</strong></h2>
+          </div>
+          <div class="modal-body">
+            <h2 id="match-name"></h2>
+          
+            <img id="picture" src="#">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+     
+<script>
+
+
+  // var array = [];
+$('#submit').on('click', function() {
+  event.preventDefault();
+
+function validateForm() {
+  var isValid = true;
+        $(".form-control").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+         }
+      });
+        $(".chosen-select").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+           }}
+       );
+        return isValid;    //will either return true or false 
+      }
+    console.log(validateForm()); 
+
+    if (validateForm()===false) {
+    
+      $("#cookie").text('');
+      $("#match-name").text('Please Answer All the Questions!');
+      $("#picture").attr("src", "http://pngimg.com/uploads/smiley/smiley_PNG192.png");
+      $("#results-modal").modal("toggle");
+    }
+  
+//if the function is true than make a new object
+if(validateForm()===true) {
+ var newObject = {
+        name:  $('#name').val().trim(),
+        photo:  $('#photo').val().trim(),
+        scores: [ $('#q1').val(), $('#q2').val(), $('#q3').val(),$('#q4').val(),$('#q5').val(),$('#q6').val(),$('#q7').val(),$('#q8').val(),$('#q9').val(),$('#q10').val()]
+}
+
+    $.post("api/friends", newObject, function(data) {
+    
+    })
+
+    $.get("/api/friends", function(data, status) {
+    
+var minumum = [];
+function difference (number) {
+    var counter = 0; 
+    for (var i=0; i<=9; i++) {
+    counter = counter +  Math.abs(parseInt(data[data.length-1].scores[i])-parseInt(data[number].scores[i])); 
+    }
+    minumum.push(counter);
+  }
+
+
+  // call the function depending as many times as the array.length (-2 this time)
+  for (var j=0; j<=data.length-2; j++) {
+      difference(j); 
+  }
+
+  //get the minimum value of the array  
+var min = Math.min(...minumum);
+//find the location of the minumum
+var find = minumum.indexOf(min);
+// finally display all the results in the modal
+$("#match-name").text("Your closes match is " + data[find].name + "!" );
+console.log(data[find].photo);
+
+$("#picture").attr("src", data[find].photo);
+$("#results-modal").modal("toggle");
+
+});
+
+}
+   
+  //clear the form after submitting information
+  $('#name').val('');
+  $('#photo').val('');
+  $('#q1').val(''); 
+  $('#q2').val('');
+  $('#q3').val(''); 
+  $('#q4').val('');
+  $('#q5').val(''); 
+  $('#q6').val('');
+  $('#q7').val(''); 
+  $('#q8').val('');
+  $('#q9').val(''); 
+  $('#q10').val('');
+
+
+
+
+
+
+  
+
+
+})
+   
+</script>
+
+<script src="../routing/htmlRoutes.js"></script>
+<script src="../routing/apiRoutes.js"></script>
+<script src="../../server.js"></script>
+
+
+
+</body>
+</html>
