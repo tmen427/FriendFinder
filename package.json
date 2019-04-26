@@ -1,5 +1,5 @@
 {
-  "name": "friendfinder",
+  "name": "FriendFinder",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,10 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/tmen427/FriendFinder.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tmen427/FriendFinder/issues"
   },
-  "homepage": "https://github.com/tmen427/FriendFinder#readme"
+  "homepage": "https://github.com/tmen427/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
